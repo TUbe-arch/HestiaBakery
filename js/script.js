@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $(".plus").click(function(){
-        $(".dietary1").slideToggle(100)
+        $(".dietary1").slideToggle("Slow")
         if($("#cos").attr("src")==="images/OCR-A_char_Plus_Sign.png"){
         
              $("#cos").attr("src","images/OCR-B_char_Plus_Sign.png");    
@@ -11,13 +11,25 @@ $(document).ready(function(){
     });
     
 
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > 1000){
+            $(".GOTOP").fadeIn("Slow");
+        } else {
+            $(".GOTOP").fadeOut("Slow");
+        }
+    });
 
+    $(".GOTOP").click(function(){
+        $('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+        return false;
+    });
     
 
     $(".ccc").click(function(){
         $(".viewwindow").fadeIn(500);
         $(".window").fadeIn(500);
         $("body").addClass("stopscroll")
+        $(".GOTOP").fadeOut("Slow");
     });
 
     $(".X").click(function(){
@@ -27,32 +39,9 @@ $(document).ready(function(){
     });
 
     $(".Dietary-Requirements").click(function(){
-        $(".fruit_checkbox").slideDown("fast");
-        $(".furit_checkbox").slideToggle(10);
+        $(".fruit_checkbox").slideDown("Slow");
+        $(".furit_checkbox").slideToggle("Slow");
     });
-
-
-
-
-
-
-
-
-
-    
-     /*   
-    $(".price").click(function(){
-        $(".price").toggleClass("slidelist2")
-        $(".slidelist").slideToggle(100);
-    });
-    
-
-    $(".slidelist").click(function(){
-        $(".Slide").toggleClass("slidelist")
-        $(".slidelist").toggleClass("display");
-        $(".ppp").toggleClass("slidelist");
-    });
-    */
 
 
 });
